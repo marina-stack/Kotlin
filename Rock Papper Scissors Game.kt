@@ -2,6 +2,7 @@ fun main (args:Array<String>) {
     val events = arrayOf("Rock", "Paper", "Scissors")
     val gameChoice = getGameChoise(events)
     val userChoice = getUserChoice(events)
+    printRslt (userChoice, gameChoice)
 }
 
 //computer chooses option
@@ -35,3 +36,18 @@ fun getUserChoice (eventsParam: Array<String>): String {
     return userChoice
 }
 
+//result output
+fun printRslt (userChoice: String, gameChoice: String) {
+    val rslt: String
+
+    //determine the result of the game
+    if (userChoice == gameChoice) rslt = "Ничья!"
+    else if ((userChoice == "Rock" && gameChoice == "Scissors") ||
+        (userChoice == "Paper" && gameChoice == "Rock") ||
+        (userChoice == "Scissors" && gameChoice == "Paper")
+    )
+        rslt = "Ты победил!"
+    
+    else rslt = "Ты проиграл!"
+
+}
