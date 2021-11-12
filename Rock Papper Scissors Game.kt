@@ -1,6 +1,7 @@
 fun main (args:Array<String>) {
     val events = arrayOf("Rock", "Paper", "Scissors")
-    val gameResult = getGameChoise(events)
+    val gameChoice = getGameChoise(events)
+    val userChoice = getUserChoice(events)
 }
 
 //computer chooses option
@@ -14,9 +15,10 @@ fun getUserChoice (eventsParam: Array<String>): String {
     //the loop runs unli a valid value is entered
     while (!validChoice) {
         //an option request from the user
-        print ("Пожалуйста, выберите одно из следующих значений:")
+        println ("Пожалуйста, выберите одно из следующих значений:")
         for (index in eventsParam) print (" $index")
         print (".")
+        println ()
 
         //read user input
         val userInput = readLine ()
