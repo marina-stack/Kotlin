@@ -6,12 +6,30 @@ fun main (args:Array<String>) {
 //computer chooses option
 fun getGameChoise (eventsParam: Array<String>) = eventsParam [(Math.random()*eventsParam.size).toInt()]
 
+//user chooses option
 fun getUserChoice (eventsParam: Array<String>): String {
-    //an option request from the user
-    print ("Пожалуйста, выберите одно из следующих значений:")
-    for (index in eventsParam) print (" $index")
-    print (".")
-    //read user input
-    val userInput = readLine ()
+    var validChoice = false
+    var userChoice = ""
 
+    //the loop runs unli a valid value is entered
+    while (!validChoice) {
+        //an option request from the user
+        print ("Пожалуйста, выберите одно из следующих значений:")
+        for (index in eventsParam) print (" $index")
+        print (".")
+
+        //read user input
+        val userInput = readLine ()
+
+        //checking the correctness of the value entered by the user
+        if (userInput != null && userInput in eventsParam) {
+            validChoice = true
+            userChoice = userInput
+        }
+
+        //displaying a msg to the user about an invalid input option
+        if (!validChoice) println ("Введите допустимое значение")
+    }
+    return userChoice
 }
+
