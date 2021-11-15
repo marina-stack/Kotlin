@@ -47,7 +47,10 @@ fun printRslt (userChoice: String, gameChoice: String) {
         (userChoice == "Scissors" && gameChoice == "Paper")
     )
         rslt = "Ты победил!"
-    
+
     else rslt = "Ты проиграл!"
+
+    //output of the game result
+    println ("Твой выбор $userChoice. Выбор компьютера $gameChoice. Результат игры: $rslt")
 
 }
